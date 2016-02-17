@@ -45,11 +45,13 @@ function getData() {
                 sqlList.push(data[i].city);
                 sqlList.push(data[i].state);
                 sqlList.push(data[i].zip_code);
-                $('#displayData').append('<div><span>' + sqlList + '</span></div>');
+                //$('#displayData').append('<div><span>' + sqlList + '</span></div>');
                 console.log(sqlList);
                 sqlList = [];
 
             }
+            $('body').append('<p style="float:left;margin:20px"><strong>' + data[0].name + '</strong></p>');
+            $('body').children().last().append('<br/>' + data[0].address);
 
         }
     });
