@@ -38,6 +38,20 @@ function getData() {
         url: '/people',
         success: function(data) {
             console.log(data);
+            var sqlList = [];
+            for(var i = 0; i < data.length; i++) {
+                sqlList.push(data[i].name);
+                sqlList.push(data[i].address);
+                sqlList.push(data[i].city);
+                sqlList.push(data[i].state);
+                sqlList.push(data[i].zip_code);
+                $('#displayData').append('<div><span>' + sqlList + '</span></div>');
+                console.log(sqlList);
+                sqlList = [];
+
+            }
+
         }
     });
 }
+
